@@ -6,6 +6,7 @@ app = Flask(__name__)
 # Helper function - for downloading videos from YouTube URL
 def download_vid_as_mp3(url):
 	ytdlp_options = {
+	    'outtmpl' : 'songs/%(title)s.%(ext)s',
 	    'postprocessors' : [{
 	        'key' : 'FFmpegExtractAudio',
 	        'preferredcodec' : 'mp3',
